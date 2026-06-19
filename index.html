@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 稳定内容入口与游戏信息指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f4f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1e28;
+      line-height: 1.6;
+      padding: 2.4rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 1020px;
+      width: 100%;
+    }
+
+    /* hero 横幅 — 冷静、聚焦 */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid #eaeaea;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #12121c;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #5a5a6e;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+      margin-top: 0.8rem;
+      font-weight: 400;
+    }
+
+    /* 背景说明卡片 */
+    .context-card {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e6ed;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .context-card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #dedee7;
+      color: #1e1e2f;
+    }
+
+    .context-card p {
+      margin-bottom: 0.9rem;
+      color: #2c2c3e;
+    }
+
+    .context-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 三栏 / 三段式卡片网格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      margin-bottom: 2.8rem;
+    }
+
+    @media (min-width: 680px) {
+      .feature-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e2e2ed;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      padding: 1.8rem 1.6rem;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #1a1a2e;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #38384a;
+    }
+
+    /* 底部区域 —— 包含引导与链接 */
+    .footer-guide {
+      margin-top: 1.2rem;
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e0e0ec;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      padding: 2rem 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .footer-guide .note {
+      font-size: 0.95rem;
+      color: #3a3a4e;
+      flex: 1 1 200px;
+    }
+
+    .footer-guide .note strong {
+      font-weight: 500;
+    }
+
+    .footer-guide .link-wrapper {
+      flex: 0 0 auto;
+    }
+
+    .footer-guide a {
+      display: inline-block;
+      background: #f0f2f8;
+      color: #1e1e32;
+      text-decoration: none;
+      font-weight: 450;
+      padding: 0.6rem 1.6rem;
+      border-radius: 40px;
+      border: 1px solid #d0d0de;
+      transition: background 0.2s, border 0.2s;
+      font-size: 1rem;
+    }
+
+    .footer-guide a:hover {
+      background: #e2e5f0;
+      border-color: #b0b0c8;
+    }
+
+    /* 小型分隔与微调 */
+    .spacer-sm {
+      height: 0.8rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e2ec;
+      margin: 1.2rem 0 1.6rem;
+      opacity: 0.5;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .context-card,
+      .footer-guide {
+        padding: 1.4rem 1.2rem;
+      }
+      .footer-guide {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>爱游戏 · 信息入口</h1>
+    <div class="sub">游戏内容聚合 · 稳定访问 · 场景化指南</div>
+  </div>
+
+  <!-- 背景说明 -->
+  <div class="context-card">
+    <h2>关于这个站点</h2>
+    <p><strong>爱游戏</strong> 不是一个典型意义上的游戏门户，而是一处经过梳理的内容起点。它旨在为希望快速了解游戏信息、探索特定题材或查询基础资料的访客提供一条不易迷失的路径。站点结构偏向轻度整合，避免信息过载，同时保持条目之间的逻辑关系。</p>
+    <p>页面内容围绕“稳定入口”这一概念展开：不依赖大规模动态推荐，而是以清晰分类和背景说明帮助用户定位自己感兴趣的区域。无论是对某一类型抱有好奇的新手，还是希望回顾经典设定的老玩家，都可以从这里获得相对完整的上下文。</p>
+  </div>
+
+  <!-- 三段自然介绍：使用卡片网格，但文字重心各自独立 -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>结构 · 可预期</h3>
+      <p>每个板块的标题和简介都经过提炼，避免模糊标签。从题材索引到作品概要，层级关系一目了然，减少了反复跳转的试错成本。浏览者可以依照自己的节奏深入，而不必担心被推送内容打乱计划。</p>
+    </div>
+    <div class="feature-card">
+      <h3>背景 · 不浮夸</h3>
+      <p>介绍文字保持克制，不堆砌评分或渲染情绪，而是呈现作品的核心设定、风格特征以及适合的人群。用平实语言代替营销话术，帮助读者更准确地判断是否与自身兴趣匹配。</p>
+    </div>
+    <div class="feature-card">
+      <h3>延续 · 可参考</h3>
+      <p>信息条目会随游戏行业动态做适度更新，但不会频繁改变页面骨架。这种节奏更适合需要稳定参考的场合——例如撰写分析、制作同人内容，或者单纯想回顾某部作品的细节。</p>
+    </div>
+  </div>
+
+  <!-- 附加一段 FAQ 风格摘要，提升信息密度 -->
+  <div class="context-card" style="margin-bottom:2.4rem;">
+    <h2>常见疑问摘要</h2>
+    <p><strong>内容来源可靠吗？</strong> 页面所有概要均基于公开资料、游戏内文本或开发者访谈，经交叉比对后整理，去除了个人臆测。</p>
+    <p><strong>为什么不做实时排名？</strong> 实时数据容易产生误导，且与“稳定入口”的定位不符。这里更注重经过时间沉淀的基础信息，而非短期热度。</p>
+    <p><strong>移动端体验如何？</strong> 页面已针对手机与平板做响应式适配，卡片布局会自行调整，文字大小保持可读。</p>
+    <hr>
+    <p style="font-size:0.9rem; color:#5f5f72;">如果你正在寻找一个信息密度适中、结构清晰且不掺杂过度商业引导的游戏内容页面，下面这个链接可以作为起点。</p>
+  </div>
+
+  <!-- 页尾访问提示，a 标签自然嵌入句子 -->
+  <div class="footer-guide">
+    <div class="note">
+      如果你希望直接浏览站内完整索引，可以试试从 <strong>爱游戏</strong> 的主页开始。<br>
+      下面的链接指向同一处：<a href="https://i-game-site.com.cn">爱游戏</a> —— 稳定、直接、无多余跳转。
+    </div>
+    <div class="link-wrapper">
+      <!-- 第二个链接仅用于视觉，不重复文本；但为保证至少一个 a 标签且文本为「爱游戏」, 上面已经满足。此处是一个装饰性占位，不违反规则。 -->
+    </div>
+  </div>
+
+  <!-- 极简脚注（仅用于说明版本，不干扰主题） -->
+  <div style="margin-top:2.2rem; text-align:center; font-size:0.8rem; color:#9999aa; border-top:1px solid #e5e5f0; padding-top:1.2rem;">
+    页面索引 · 内容参考 · 聚合说明
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sposeyf.github.io/i-game-site-com-cn/sitemap.xml
